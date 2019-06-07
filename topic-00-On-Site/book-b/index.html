@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+      
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+
+    </style>
+  </head>
+
+  
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  On-Site Workshop  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="SQL Introduction">
+          SQL Introduction
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
+  </div>
+
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          
+            <a class="item"
+               href="http://wit-hdip-comp-sci-2018.github.io/database//topic-00-On-Site/book-a/index.html">Installation </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="http://wit-hdip-comp-sci-2018.github.io/database//topic-00-On-Site/book-b/index.html">SQL Introduction </a>
+          
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="SQL Introduction">
+            <h1>Objectives</h1>
+<p>In this lab we will become familiar with using MySQL Workbench.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>What is SQL?</h1>
+<p>SQL (sometimes pronounced SEQUEL) stands for Structured Query Language. SQL is used to communicate with a database. </p>
+<h2>Table Basics</h2>
+<p>A relational database system contains one or more objects called <em>tables</em>. The data or information for the database are stored in these tables. 
+Tables are uniquely identified by their <em>name</em> and are comprised of <em>columns</em> and <em>rows</em>. Columns contain the column name, data type, and any other attributes 
+for the column. Rows contain the records or data for the columns. Here is a sample table called &quot;weather&quot;.
+The values city, state, high, and low are the columns. The rows contain the data for this table:</p>
+<p><img src="img/table.png" alt=""></p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Our example - Suppliers and Products</h1>
+<p>We have built a <a href="archives/supplierproducts.zip">Suppliers and Products database</a> with the following tables: <em>supplier</em>  and <em>product</em>. </p>
+<p>The tables are populated and we will use this data in this lab. The schema is stored in <strong>supplierproducts.sql</strong>.</p>
+<ul>
+<li>Open <em>MySQL Workbench</em> and log in using password root. </li>
+</ul>
+<p>To run the script:</p>
+<ul>
+<li>Under the <em>File</em> menu, choose <em>Run SQL Script …</em>. </li>
+<li>When the dialog box opens, select <em>supplierproducts.sql</em>. </li>
+<li>Click the button <em>Open</em> and on the next dialog box, click <em>Run</em>.  </li>
+<li>When the Operation has run successfully, click Close.</li>
+</ul>
+<p>Alternatively:</p>
+<ul>
+<li>Choose <em>Open SQL Script …</em>. </li>
+<li>When the dialog box opens, select <em>supplierproducts.sql</em>. </li>
+<li>Click the button <em>Open</em>. This will open the script in a new tab. </li>
+<li>To execute the script, choose the third option on the window.  </li>
+</ul>
+<p><img src="img/dialog.png" alt=""></p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Getting Started</h1>
+<p>First, we will open a new tab. Select <em>File</em> and then <em>New Query Tab</em>.</p>
+<p>To execute a single command, choose the fourth option on the window.  </p>
+<p><img src="img/dialog2.PNG" alt=""></p>
+<p>Enter (and execute) the following command to select the database that we want to work with:</p>
+<pre><code> use mysupplierdb;</code></pre>
+<p>To see what tables exist in the database, enter (and execute) the following command:</p>
+<pre><code> show tables;</code></pre>
+<p>To see the defintion (layout) of each table, use the <code>DESC</code> or <code>DESCRIBE</code> command. So to see the defintion of the supplier table, 
+enter (and execute) the following command:</p>
+<pre><code> desc supplier;</code></pre>
+<h2>To do</h2>
+<p>Output the defintion of the product table.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Simple Selection</h1>
+<p>To see all the rows (records) and columns (data fields) from the supplier table, enter (and execute) the following command:</p>
+<pre><code> select * from supplier;</code></pre>
+<p>To select a subset of the columns, you need to specify the columns by name. For example, to return the columns (fname and lname) from the supplier
+table, enter (and execute) the following command:</p>
+<pre><code> select fname, lname from supplier;</code></pre>
+<p>To select a subset of rows (records), you need to include a <code>WHERE</code> clause with some condition(s). For example, to return all suppliers form Dublin. The
+condition would be location = &#39;Dublin&#39;. Enter (and execute) the following command:</p>
+<pre><code> select * from supplier where location = &#39;dublin&#39;;</code></pre>
+<h2>To do</h2>
+<ol>
+<li>Return all rows and columns from the product table.</li>
+<li>Return the name and description of all products.</li>
+<li>Return all product details for the product identified by productCode &#39;p13111&#39;;</li>
+<li>Return the fname and lname for all suppliers from London.</li>
+<li>Return the name and description for the product identified by productCode &#39;p13111&#39;;</li>
+</ol>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>The WHERE clause</h1>
+<p>As we saw already, conditions in the <code>WHERE</code> clause can contain the <code>=</code> operator, as in the following command:</p>
+<pre><code> select * from product where price = 70;</code></pre>
+<p>To return all product details for products that are price at 70 euro or more, enter (and execute) the following command:</p>
+<pre><code> select * from product where price &gt;= 70;</code></pre>
+<p>To return all product details for products that are in the price range (70 - 90 inclusive), enter (and execute) the following command:</p>
+<pre><code> select * from product where price between 70 and 90;</code></pre>
+<p>You could also use the following command where you have 2 conditions and both need to be truem, so you use <code>AND</code>:</p>
+<pre><code> select * from product where price &gt;= 70 and price &lt;= 90;</code></pre>
+<p>In a query like this, using <code>BETWEEN ... AND</code> is the better option.</p>
+<h2>To do</h2>
+<ol>
+<li>Return all product details for products that cost 50 euro or less.</li>
+<li>Return all product details for products that have a stock quantity in the range 100 - 400 inclusive.</li>
+</ol>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>More on the WHERE clause</h1>
+<p>To return all red products, enter (and execute) the following command:</p>
+<pre><code> select * from product where colour = &#39;red&#39;;</code></pre>
+<p>To return all red, grey or white products, enter (and execute) the following command:</p>
+<pre><code> select * from product where colour = &#39;red&#39; or colour = &#39;grey&#39; or colour =&#39;white&#39;;</code></pre>
+<p>A shorter (and better) way of writing this statement would be:</p>
+<pre><code> select * from product where colour in(&#39;red&#39;,&#39;grey&#39;,&#39;white&#39;);</code></pre>
+<p>Enter (and execute) the following command to return all products whose name includes the term <em>Skechers</em>:</p>
+<pre><code> select name from product where name = &#39;Skechers&#39;;</code></pre>
+<p>The above statement returns no records as there is no exact match with the term <em>Skechers</em>. To return all products whose name includes the term <em>Skechers</em>, we 
+need to use <code>LIKE</code> for pattern matching.</p>
+<p>Enter (and execute) the following command:</p>
+<pre><code> select name from product where name like &#39;Skechers%&#39;;</code></pre>
+<h2>To do</h2>
+<ol>
+<li>Return all suppliers whose last name (lname) is Cooney, Jones or Lacey.</li>
+<li>Return all products whose name includes the term Munster.</li>
+</ol>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>The JOIN clause</h1>
+<p>If we want to return data from both tables we will need to join the tables together using the <code>JOIN</code> clause. The join we will use is the <code>Natural Join</code>. This
+joins tables where there is a match between the primary key value of one table and the foreign key value of the other.</p>
+<p>In the following example we join the tables together and return all columns. Enter (and execute) the following command:</p>
+<pre><code> select * from supplier natural join product;</code></pre>
+<p>The above statement will work if the primary key and foreign key values have the same name. If they do not, you could use the following:</p>
+<pre><code> select * from supplier join product on supplier.supplierId = product.supplierId;</code></pre>
+<p>This will return all columns and the <code>common</code> column is duplicated.</p>
+<p>Another example that returns the product name and the supplier name that supplies the product, enter (and execute) the following command:</p>
+<pre><code> select name, fname, lname from supplier natural join product;</code></pre>
+<h2>To do</h2>
+<p>Return the name and description of all products supplied by all suppliers from London.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
+<ol>
+<li>Try to think of other queries that you would like to execute and write the SQL for them.</li>
+<li>Have a look at <a href = "http://www.w3schools.com/sql" target = "_blank">SQL Tutorial</a></li>
+</ol>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <script>
+    $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+    $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+  </script>
+
+
+
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right small menu">
+      <div class="ui tiny basic message segment">
+         Powered by <a href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a> Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>

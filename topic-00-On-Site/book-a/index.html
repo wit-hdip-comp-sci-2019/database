@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+      
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+
+    </style>
+  </head>
+
+  
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  On-Site Workshop  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Installation">
+          Installation
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+    </div>
+  </div>
+
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          
+            <a class="item"
+               href="http://wit-hdip-comp-sci-2018.github.io/database//topic-00-On-Site/book-a/index.html">Installation </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="http://wit-hdip-comp-sci-2018.github.io/database//topic-00-On-Site/book-b/index.html">SQL Introduction </a>
+          
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Installation">
+            <h1>Objectives</h1>
+<p>In this lab, you will install MySQL and log in to MySQL Workbench.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>MySQL and MySQL Workbench</h1>
+<p>MySQL is an open-source relational database management system (RDBMS). The acronym &quot;SQL&quot; (sometimes pronounced &quot;sequel&quot;) stands for Structured Query Language. SQL is a standard computer language for relational database management and data manipulation. SQL is used to query, insert, update and modify data in a database.</p>
+<p>MySQL Workbench is a visual database design tool that integrates SQL development, administration, database design, creation and maintenance into a single integrated development environment for the MySQL database system.</p>
+<p>In this lab, you will install the various components that make up a MySQL database, including the MySQL server and the MySQL Workbench application.</p>
+<p><strong>Note</strong>: Steps 2, 3 and 4 cover Windows installation; Mac users should skip to step 5. </p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Download the installer</h1>
+<p>You can download the MySQL installer here: <a href="https://dev.mysql.com/downloads/windows/installer/8.0.html" target="_ blank"><code>https://dev.mysql.com/downloads/windows/installer/8.0.html</code></a></p>
+<p>Select the second of the two options shown in the image below:</p>
+<p><img src="img/01a.png" alt=""></p>
+<p>Note that you do not need to sign up for an Oracle Web account - just select &quot;No thanks, just start my download&quot; which can be found under the grey box with the Login and Sign up buttons.</p>
+<p><img src="img/01b.png" alt=""></p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Run the installation</h1>
+<p>Once you have downloaded the MySQL installer, carry out the following steps to install MySQL:</p>
+<ul>
+<li>Double click the installer and click &quot;Run&quot;.</li>
+<li>Accept the license terms and select &quot;Next&quot;.</li>
+<li>Leave the Setup type as the Developer Default and click &quot;Next&quot;.</li>
+<li>There are several dependencies that need to be installed on your machine in order to run MySQL (e.g. Visual Studio, Python). The Check Requirements step will identify these. Some can be installed automatically; however, if you see the word &quot;manual&quot; next to an item, you will need to manually download and install that piece of software.</li>
+</ul>
+<p><img src="img/req.png" alt=""></p>
+<p>Once you have installed all the dependencies you can continue to MySQL installation.</p>
+<h2>Installation steps</h2>
+<ul>
+<li>In the High Availabilty section, leave &quot;Standalone MySQL Server&quot; checked and click Next.</li>
+</ul>
+<p><img src="img/02.png" alt=""></p>
+<ul>
+<li>In the Type and Networking section, click Next to accept these default settings.</li>
+</ul>
+<p><img src="img/03.png" alt=""></p>
+<ul>
+<li>In Authentication Method, leave the Strong Encryption option checked and proceed by clicking Next.</li>
+</ul>
+<p><img src="img/04.png" alt=""></p>
+<ul>
+<li><strong>Important</strong>: Accounts and Roles:<ul>
+<li>In this step, you need to set a password to use when logging into MySQL Workbench. <strong>It is crucial that you note and remember this password.</strong></li>
+<li>Often, we use the password &quot;root&quot; as a default password for the root user account. If you want to keep it simple and easy to remember, use &quot;root&quot; as your password here.</li>
+<li>Once you have created your password, click Next (you don&#39;t need to do anything in the MySQL User Accounts part of this step).</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/05.png" alt=""></p>
+<ul>
+<li>On the Windows Service step, click Next to accept the default settings.</li>
+</ul>
+<p><img src="img/06.png" alt=""></p>
+<ul>
+<li>In the Apply Configuration section, click Execute.</li>
+</ul>
+<p><img src="img/07.png" alt=""></p>
+<ul>
+<li>Click Next in Product Configuration.</li>
+</ul>
+<p><img src="img/08.png" alt=""></p>
+<ul>
+<li>In the Connect To Server section, enter your password (this is the password you created earlier).</li>
+<li>Click Check; you should receive confirmation that the connection was successful.</li>
+<li>Then click Next to proceed; then click Finish.</li>
+</ul>
+<p><img src="img/09.png" alt=""></p>
+<ul>
+<li>Lastly, to install the MySQL samples and examples, click Execute and then Finish.</li>
+</ul>
+<p><img src="img/10.png" alt=""></p>
+<ul>
+<li>Once installation has completed, MySQL Workbench should launch automatically. In step 4, we will log in to MySQL Workbench.</li>
+</ul>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Log in to MySQL Workbench</h1>
+<p>Once the MySQL installation is complete, MySQL Workbench should launch automatically.</p>
+<p><img src="img/11.png" alt=""></p>
+<p>Under &quot;MySQL Connections&quot; you should see one connection (e.g. Local instance MySQL80). This is the default connection; you can see it uses the default &quot;root&quot; user, the localhost server and port 3306.</p>
+<p>Double-click on the connection. You will be asked for a password; this is the password that you set during the installation process.</p>
+<p><img src="img/12.png" alt=""></p>
+<p>After entering the correct password, you should see the following view:</p>
+<p><img src="img/13.png" alt=""></p>
+<p>You are now logged in to the MySQL Workbench application. In our next lab (the onsite workshop on Friday 14th June) we will create a database and perform some simple queries on the data.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>macOS installation</h1>
+<p>You can download the MySQL installer for macOS here: <a href="https://dev.mysql.com/downloads/mysql/" target="_ blank"><code>https://dev.mysql.com/downloads/mysql/</code></a></p>
+<p>Select macOS as the operating system and choose the first option (DMG archive).</p>
+<p><img src="img/01mac.png" alt=""></p>
+<h2>Installing MySQL Community Server</h2>
+<p>Once you have downloaded the installer, follow the steps described here to install MySQL:
+<a href="https://dev.mysql.com/doc/refman/8.0/en/osx-installation-pkg.html" target="_ blank"><code>https://dev.mysql.com/doc/refman/8.0/en/osx-installation-pkg.html</code></a></p>
+<h2>Using the MySQL preference pane</h2>
+<p>The MySQL Installation Package includes a MySQL preference pane that enables you to start and stop your MySQL database server. Complete the steps shown here to set this up:
+<a href="https://dev.mysql.com/doc/refman/8.0/en/osx-installation-prefpane.html" target="_ blank"><code>https://dev.mysql.com/doc/refman/8.0/en/osx-installation-prefpane.html</code></a></p>
+<h2>Installing MySQL Workbench</h2>
+<p>Lastly, complete the following steps to install the MySQL Workbench application:
+<a href="https://dev.mysql.com/doc/workbench/en/wb-installing-mac.html" target="_ blank"><code>https://https://dev.mysql.com/doc/workbench/en/wb-installing-mac.html</code></a></p>
+<h2>Log in to MySQL Workbench</h2>
+<p>Launch MySQL Workbench. It should look something like this:</p>
+<p><img src="img/11.png" alt=""></p>
+<p>Under &quot;MySQL Connections&quot; you should see one connection (e.g. Local instance MySQL80). This is the default connection; you can see it uses the default &quot;root&quot; user, the localhost server and port 3306.</p>
+<p>Double-click on the connection. You will be asked for a password; this is the password that you set during the installation process.</p>
+<p><img src="img/12.png" alt=""></p>
+<p>After entering the correct password, you should see the following view:</p>
+<p><img src="img/13.png" alt=""></p>
+<p>You are now logged in to the MySQL Workbench application. In our next lab (the onsite workshop on Friday 14th June) we will create a database and perform some simple queries on the data.</p>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <script>
+    $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+    $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+  </script>
+
+
+
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right small menu">
+      <div class="ui tiny basic message segment">
+         Powered by <a href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a> Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>

@@ -11,11 +11,59 @@
   "img" : "",
   "videoid" : "",
   "objectives" : "<p>entities · tables · rows · sql · er · nosql</p>",
-  "folder" : "database-2019",
+  "folder" : "ict-database",
   "link" : "index.html",
   "los": [
    ]
 ,
-  "topics" : [  ]
+  "topics" : [  {
+    
+  
+    "properties" : {"highlightstyle":"railscasts","disable":false,"highlight":false,"slack":"https://wit-hdip-comp-sci-19.slack.com/messages/CKC404XQV","moodle":"https://moodle.wit.ie/course/view.php?id=132121","youtube":"https://www.youtube.com/playlist?list=PLMW4bgOfD3DwK4DR-0huZ57lsNtBgivQe","parent":"https://wit-hdip-comp-sci-2018.github.io/","courseurl":"http://wit-hdip-comp-sci-2018.github.io/database/","credits":"Dr. Rosanne Birney, Mary Lyng, WIT","courseicon":"link database","license":"Unless otherwise stated, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>.","ects":5,"faColour":"#FF5714","faPanelicon":"far fa-newspaper"},
+  
+  "type" : "topic",
+  "title" : " On-Site Workshop ",
+  "img" : "topic.png",
+  "videoid" : "",
+  "objectives" : "<p>In this section, you will get started with SQL through MySQL Workbench.</p>",
+  "folder" : "topic-00-On-Site",
+  "link" : "index.html",
+  "los": [
+   {
+    
+  
+    "properties" : {},
+  
+  "type" : "lab",
+  "title" : "Installation",
+  "img" : "img/main.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lab, you will install MySQL and log in to MySQL Workbench.</p>",
+  "folder" : "book-a",
+  "link" : "index.html",
+  "los": [
+   ]
+
+    } ,
+   {
+    
+  
+    "properties" : {},
+  
+  "type" : "lab",
+  "title" : "SQL Introduction",
+  "img" : "img/main.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lab we will become familiar with using MySQL Workbench.</p>",
+  "folder" : "book-b",
+  "link" : "index.html",
+  "los": [
+   ]
+
+    } 
+   ]
+
+  }
+ ]
   }
 

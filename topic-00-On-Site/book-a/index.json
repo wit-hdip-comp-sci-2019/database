@@ -1,0 +1,59 @@
+
+
+
+  {
+  
+  
+    "properties" : {},
+  
+  "type" : "lab",
+  "title" : "Installation",
+  "img" : "img/main.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lab, you will install MySQL and log in to MySQL Workbench.</p>",
+  "folder" : "book-a",
+  "link" : "index.html",
+  "los": [
+   ]
+,
+  "chapters" : [
+  
+    {
+    "title": "# Objectives",
+    "shortTitle": "Installation",
+    "contentMd" : "# Objectives\r\n\r\nIn this lab, you will install MySQL and log in to MySQL Workbench.\r\n"
+    },
+  
+    {
+    "title": "# MySQL and MySQL Workbench",
+    "shortTitle": "01",
+    "contentMd" : "# MySQL and MySQL Workbench\r\n\r\nMySQL is an open-source relational database management system (RDBMS). The acronym \"SQL\" (sometimes pronounced \"sequel\") stands for Structured Query Language. SQL is a standard computer language for relational database management and data manipulation. SQL is used to query, insert, update and modify data in a database.\r\n\r\nMySQL Workbench is a visual database design tool that integrates SQL development, administration, database design, creation and maintenance into a single integrated development environment for the MySQL database system.\r\n\r\nIn this lab, you will install the various components that make up a MySQL database, including the MySQL server and the MySQL Workbench application.\r\n\r\n**Note**: Steps 2, 3 and 4 cover Windows installation; Mac users should skip to step 5. \r\n"
+    },
+  
+    {
+    "title": "# Download the installer",
+    "shortTitle": "02",
+    "contentMd" : "# Download the installer\r\n\r\nYou can download the MySQL installer here: <a href=\"https://dev.mysql.com/downloads/windows/installer/8.0.html\" target=\"_ blank\">`https://dev.mysql.com/downloads/windows/installer/8.0.html`</a>\r\n\r\nSelect the second of the two options shown in the image below:\r\n\r\n![](img/01a.png)\r\n\r\nNote that you do not need to sign up for an Oracle Web account - just select \"No thanks, just start my download\" which can be found under the grey box with the Login and Sign up buttons.\r\n\r\n![](img/01b.png)\r\n"
+    },
+  
+    {
+    "title": "# Run the installation",
+    "shortTitle": "03",
+    "contentMd" : "# Run the installation\r\n\r\nOnce you have downloaded the MySQL installer, carry out the following steps to install MySQL:\r\n\r\n- Double click the installer and click \"Run\".\r\n- Accept the license terms and select \"Next\".\r\n- Leave the Setup type as the Developer Default and click \"Next\".\r\n- There are several dependencies that need to be installed on your machine in order to run MySQL (e.g. Visual Studio, Python). The Check Requirements step will identify these. Some can be installed automatically; however, if you see the word \"manual\" next to an item, you will need to manually download and install that piece of software.\r\n\r\n![](img/req.png)\r\n\r\nOnce you have installed all the dependencies you can continue to MySQL installation.\r\n\r\n## Installation steps\r\n\r\n- In the High Availabilty section, leave \"Standalone MySQL Server\" checked and click Next.\r\n\r\n![](img/02.png)\r\n\r\n- In the Type and Networking section, click Next to accept these default settings.\r\n\r\n![](img/03.png)\r\n\r\n- In Authentication Method, leave the Strong Encryption option checked and proceed by clicking Next.\r\n\r\n![](img/04.png)\r\n\r\n- **Important**: Accounts and Roles:\r\n  - In this step, you need to set a password to use when logging into MySQL Workbench. **It is crucial that you note and remember this password.**\r\n  - Often, we use the password \"root\" as a default password for the root user account. If you want to keep it simple and easy to remember, use \"root\" as your password here.\r\n  - Once you have created your password, click Next (you don't need to do anything in the MySQL User Accounts part of this step).\r\n\r\n![](img/05.png)\r\n\r\n- On the Windows Service step, click Next to accept the default settings.\r\n\r\n![](img/06.png)\r\n\r\n- In the Apply Configuration section, click Execute.\r\n\r\n![](img/07.png)\r\n\r\n- Click Next in Product Configuration.\r\n\r\n![](img/08.png)\r\n\r\n- In the Connect To Server section, enter your password (this is the password you created earlier).\r\n- Click Check; you should receive confirmation that the connection was successful.\r\n- Then click Next to proceed; then click Finish.\r\n\r\n![](img/09.png)\r\n\r\n- Lastly, to install the MySQL samples and examples, click Execute and then Finish.\r\n\r\n![](img/10.png)\r\n\r\n\r\n- Once installation has completed, MySQL Workbench should launch automatically. In step 4, we will log in to MySQL Workbench.\r\n"
+    },
+  
+    {
+    "title": "# Log in to MySQL Workbench",
+    "shortTitle": "04",
+    "contentMd" : "# Log in to MySQL Workbench\r\n\r\nOnce the MySQL installation is complete, MySQL Workbench should launch automatically.\r\n\r\n![](img/11.png)\r\n\r\nUnder \"MySQL Connections\" you should see one connection (e.g. Local instance MySQL80). This is the default connection; you can see it uses the default \"root\" user, the localhost server and port 3306.\r\n\r\nDouble-click on the connection. You will be asked for a password; this is the password that you set during the installation process.\r\n\r\n![](img/12.png)\r\n\r\nAfter entering the correct password, you should see the following view:\r\n\r\n![](img/13.png)\r\n\r\nYou are now logged in to the MySQL Workbench application. In our next lab (the onsite workshop on Friday 14th June) we will create a database and perform some simple queries on the data.\r\n"
+    },
+  
+    {
+    "title": "# macOS installation",
+    "shortTitle": "05",
+    "contentMd" : "# macOS installation\r\n\r\nYou can download the MySQL installer for macOS here: <a href=\"https://dev.mysql.com/downloads/mysql/\" target=\"_ blank\">`https://dev.mysql.com/downloads/mysql/`</a>\r\n\r\nSelect macOS as the operating system and choose the first option (DMG archive).\r\n\r\n![](img/01mac.png)\r\n\r\n## Installing MySQL Community Server\r\n\r\nOnce you have downloaded the installer, follow the steps described here to install MySQL:\r\n<a href=\"https://dev.mysql.com/doc/refman/8.0/en/osx-installation-pkg.html\" target=\"_ blank\">`https://dev.mysql.com/doc/refman/8.0/en/osx-installation-pkg.html`</a>\r\n\r\n## Using the MySQL preference pane\r\n\r\nThe MySQL Installation Package includes a MySQL preference pane that enables you to start and stop your MySQL database server. Complete the steps shown here to set this up:\r\n<a href=\"https://dev.mysql.com/doc/refman/8.0/en/osx-installation-prefpane.html\" target=\"_ blank\">`https://dev.mysql.com/doc/refman/8.0/en/osx-installation-prefpane.html`</a>\r\n\r\n\r\n## Installing MySQL Workbench\r\n\r\nLastly, complete the following steps to install the MySQL Workbench application:\r\n<a href=\"https://dev.mysql.com/doc/workbench/en/wb-installing-mac.html\" target=\"_ blank\">`https://https://dev.mysql.com/doc/workbench/en/wb-installing-mac.html`</a>\r\n\r\n## Log in to MySQL Workbench\r\n\r\nLaunch MySQL Workbench. It should look something like this:\r\n\r\n![](img/11.png)\r\n\r\nUnder \"MySQL Connections\" you should see one connection (e.g. Local instance MySQL80). This is the default connection; you can see it uses the default \"root\" user, the localhost server and port 3306.\r\n\r\nDouble-click on the connection. You will be asked for a password; this is the password that you set during the installation process.\r\n\r\n![](img/12.png)\r\n\r\nAfter entering the correct password, you should see the following view:\r\n\r\n![](img/13.png)\r\n\r\nYou are now logged in to the MySQL Workbench application. In our next lab (the onsite workshop on Friday 14th June) we will create a database and perform some simple queries on the data.\r\n"
+    }
+  
+  ]
+  }
+

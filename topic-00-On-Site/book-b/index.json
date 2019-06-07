@@ -1,0 +1,77 @@
+
+
+
+  {
+  
+  
+    "properties" : {},
+  
+  "type" : "lab",
+  "title" : "SQL Introduction",
+  "img" : "img/main.png",
+  "videoid" : "none",
+  "objectives" : "<p>In this lab we will become familiar with using MySQL Workbench.</p>",
+  "folder" : "book-b",
+  "link" : "index.html",
+  "los": [
+   ]
+,
+  "chapters" : [
+  
+    {
+    "title": "#Objectives",
+    "shortTitle": "SQL Introduction",
+    "contentMd" : "#Objectives\r\n\r\nIn this lab we will become familiar with using MySQL Workbench.\r\n"
+    },
+  
+    {
+    "title": "#What is SQL?",
+    "shortTitle": "01",
+    "contentMd" : "#What is SQL?\r\n\r\nSQL (sometimes pronounced SEQUEL) stands for Structured Query Language. SQL is used to communicate with a database. \r\n\r\n## Table Basics\r\n\r\nA relational database system contains one or more objects called *tables*. The data or information for the database are stored in these tables. \r\nTables are uniquely identified by their *name* and are comprised of *columns* and *rows*. Columns contain the column name, data type, and any other attributes \r\nfor the column. Rows contain the records or data for the columns. Here is a sample table called \"weather\".\r\nThe values city, state, high, and low are the columns. The rows contain the data for this table:\r\n\r\n![](img/table.png)"
+    },
+  
+    {
+    "title": "# Our example - Suppliers and Products",
+    "shortTitle": "02",
+    "contentMd" : "# Our example - Suppliers and Products\r\n\r\nWe have built a [Suppliers and Products database](archives/supplierproducts.zip) with the following tables: *supplier*  and *product*. \r\n\r\nThe tables are populated and we will use this data in this lab. The schema is stored in **supplierproducts.sql**.\r\n\r\n- Open *MySQL Workbench* and log in using password root. \r\n\r\nTo run the script:\r\n\r\n- Under the *File* menu, choose *Run SQL Script …*. \r\n- When the dialog box opens, select *supplierproducts.sql*. \r\n- Click the button *Open* and on the next dialog box, click *Run*.  \r\n- When the Operation has run successfully, click Close.\r\n\r\nAlternatively:\r\n\r\n- Choose *Open SQL Script …*. \r\n- When the dialog box opens, select *supplierproducts.sql*. \r\n- Click the button *Open*. This will open the script in a new tab. \r\n- To execute the script, choose the third option on the window.  \r\n\r\n![](img/dialog.png)\r\n\r\n"
+    },
+  
+    {
+    "title": "# Getting Started",
+    "shortTitle": "03",
+    "contentMd" : "# Getting Started\r\n\r\nFirst, we will open a new tab. Select *File* and then *New Query Tab*.\r\n\r\nTo execute a single command, choose the fourth option on the window.  \r\n\r\n![](img/dialog2.PNG)\r\n\r\nEnter (and execute) the following command to select the database that we want to work with:\r\n\r\n~~~\r\n use mysupplierdb;\r\n~~~\r\n\r\nTo see what tables exist in the database, enter (and execute) the following command:\r\n\r\n~~~\r\n show tables;\r\n~~~\r\n\r\nTo see the defintion (layout) of each table, use the `DESC` or `DESCRIBE` command. So to see the defintion of the supplier table, \r\nenter (and execute) the following command:\r\n\r\n~~~\r\n desc supplier;\r\n~~~\r\n\r\n## To do\r\n\r\nOutput the defintion of the product table."
+    },
+  
+    {
+    "title": "# Simple Selection",
+    "shortTitle": "04",
+    "contentMd" : "# Simple Selection\r\n\r\nTo see all the rows (records) and columns (data fields) from the supplier table, enter (and execute) the following command:\r\n\r\n~~~\r\n select * from supplier;\r\n~~~\r\n\r\nTo select a subset of the columns, you need to specify the columns by name. For example, to return the columns (fname and lname) from the supplier\r\ntable, enter (and execute) the following command:\r\n\r\n~~~\r\n select fname, lname from supplier;\r\n~~~\r\n\r\nTo select a subset of rows (records), you need to include a `WHERE` clause with some condition(s). For example, to return all suppliers form Dublin. The\r\ncondition would be location = 'Dublin'. Enter (and execute) the following command:\r\n\r\n~~~\r\n select * from supplier where location = 'dublin';\r\n~~~\r\n\r\n## To do\r\n\r\n1. Return all rows and columns from the product table.\r\n2. Return the name and description of all products.\r\n3. Return all product details for the product identified by productCode 'p13111';\r\n4. Return the fname and lname for all suppliers from London.\r\n5. Return the name and description for the product identified by productCode 'p13111';\r\n"
+    },
+  
+    {
+    "title": "# The WHERE clause",
+    "shortTitle": "05",
+    "contentMd" : "# The WHERE clause\r\n\r\nAs we saw already, conditions in the `WHERE` clause can contain the `=` operator, as in the following command:\r\n\r\n~~~\r\n select * from product where price = 70;\r\n~~~\r\n\r\nTo return all product details for products that are price at 70 euro or more, enter (and execute) the following command:\r\n\r\n~~~\r\n select * from product where price >= 70;\r\n~~~\r\n\r\nTo return all product details for products that are in the price range (70 - 90 inclusive), enter (and execute) the following command:\r\n\r\n~~~\r\n select * from product where price between 70 and 90;\r\n~~~\r\n\r\nYou could also use the following command where you have 2 conditions and both need to be truem, so you use `AND`:\r\n\r\n~~~\r\n select * from product where price >= 70 and price <= 90;\r\n~~~\r\n\r\nIn a query like this, using `BETWEEN ... AND` is the better option.\r\n\r\n## To do\r\n \r\n 1. Return all product details for products that cost 50 euro or less.\r\n 2. Return all product details for products that have a stock quantity in the range 100 - 400 inclusive."
+    },
+  
+    {
+    "title": "# More on the WHERE clause",
+    "shortTitle": "06",
+    "contentMd" : "# More on the WHERE clause\r\n\r\nTo return all red products, enter (and execute) the following command:\r\n~~~\r\n select * from product where colour = 'red';\r\n~~~\r\n\r\nTo return all red, grey or white products, enter (and execute) the following command:\r\n\r\n~~~\r\n select * from product where colour = 'red' or colour = 'grey' or colour ='white';\r\n~~~\r\n\r\nA shorter (and better) way of writing this statement would be:\r\n\r\n~~~\r\n select * from product where colour in('red','grey','white');\r\n~~~\r\n\r\nEnter (and execute) the following command to return all products whose name includes the term *Skechers*:\r\n\r\n~~~\r\n select name from product where name = 'Skechers';\r\n~~~\r\n\r\nThe above statement returns no records as there is no exact match with the term *Skechers*. To return all products whose name includes the term *Skechers*, we \r\nneed to use `LIKE` for pattern matching.\r\n\r\nEnter (and execute) the following command:\r\n\r\n~~~\r\n select name from product where name like 'Skechers%';\r\n~~~\r\n\r\n##To do\r\n\r\n1. Return all suppliers whose last name (lname) is Cooney, Jones or Lacey.\r\n2. Return all products whose name includes the term Munster."
+    },
+  
+    {
+    "title": "# The JOIN clause",
+    "shortTitle": "07",
+    "contentMd" : "# The JOIN clause\r\n\r\nIf we want to return data from both tables we will need to join the tables together using the `JOIN` clause. The join we will use is the `Natural Join`. This\r\njoins tables where there is a match between the primary key value of one table and the foreign key value of the other.\r\n\r\nIn the following example we join the tables together and return all columns. Enter (and execute) the following command:\r\n\r\n~~~\r\n select * from supplier natural join product;\r\n~~~\r\n\r\nThe above statement will work if the primary key and foreign key values have the same name. If they do not, you could use the following:\r\n\r\n~~~\r\n select * from supplier join product on supplier.supplierId = product.supplierId;\r\n~~~\r\n\r\nThis will return all columns and the `common` column is duplicated.\r\n\r\nAnother example that returns the product name and the supplier name that supplies the product, enter (and execute) the following command:\r\n\r\n~~~\r\n select name, fname, lname from supplier natural join product;\r\n~~~\r\n\r\n## To do\r\n\r\nReturn the name and description of all products supplied by all suppliers from London."
+    },
+  
+    {
+    "title": "# Exercises",
+    "shortTitle": "Exercises",
+    "contentMd" : "# Exercises\r\n\r\n1. Try to think of other queries that you would like to execute and write the SQL for them.\r\n2. Have a look at <a href = \"http://www.w3schools.com/sql\" target = \"_blank\">SQL Tutorial</a>"
+    }
+  
+  ]
+  }
+
