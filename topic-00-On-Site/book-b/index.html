@@ -224,7 +224,7 @@ The values city, state, high, and low are the columns. The rows contain the data
 enter (and execute) the following command:</p>
 <pre><code> desc supplier;</code></pre>
 <h2>To do</h2>
-<p>Output the defintion of the product table.</p>
+<p>Output the definition of the product table.</p>
 
           </div>
         
@@ -278,8 +278,8 @@ condition would be location = &#39;Dublin&#39;. Enter (and execute) the followin
 <pre><code> select * from product where colour in(&#39;red&#39;,&#39;grey&#39;,&#39;white&#39;);</code></pre>
 <p>Enter (and execute) the following command to return all products whose name includes the term <em>Skechers</em>:</p>
 <pre><code> select name from product where name = &#39;Skechers&#39;;</code></pre>
-<p>The above statement returns no records as there is no exact match with the term <em>Skechers</em>. To return all products whose name includes the term <em>Skechers</em>, we 
-need to use <code>LIKE</code> for pattern matching.</p>
+<p>The above statement returns no records as there is no exact match with the term <em>Skechers</em>. To return all products whose name begins with the term <em>Skechers</em>, we 
+need to use <code>LIKE</code> for pattern matching. The <strong>%</strong> wildcard can appear before and/or after the term.</p>
 <p>Enter (and execute) the following command:</p>
 <pre><code> select name from product where name like &#39;Skechers%&#39;;</code></pre>
 <h2>To do</h2>
@@ -310,7 +310,7 @@ joins tables where there is a match between the primary key value of one table a
             <h1>Exercises</h1>
 <ol>
 <li>Try to think of other queries that you would like to execute and write the SQL for them.</li>
-<li>Have a look at <a href = "http://www.w3schools.com/sql" target = "_blank">SQL Tutorial</a></li>
+<li>Have a look at the following <a href = "http://www.w3schools.com/sql" target = "_blank">SQL Tutorial</a>.</li>
 </ol>
 
           </div>
